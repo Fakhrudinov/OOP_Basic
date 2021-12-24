@@ -63,7 +63,69 @@ namespace OOP_DZ2
                 $"with type '{bankAccauntFourth1.BankAccountType}', " +
                 $"amount: {bankAccauntFourth1.BankAccountAmount}");
 
+
+            Console.WriteLine("\nКласс4, before transfer");
+            BankAccauntFourth bankAccauntFifthDonor = new BankAccauntFourth(100);
+            BankAccauntFourth bankAccauntFifthRecepient = new BankAccauntFourth(100);
+
+            Console.WriteLine($"Account donor before transfer: '{bankAccauntFifthDonor.BankAccountNumber}' " +
+                $"amount: {bankAccauntFifthDonor.BankAccountAmount}");
+
+            Console.WriteLine($"Account recepient before transfer: '{bankAccauntFifthRecepient.BankAccountNumber}' " +
+                $"amount: {bankAccauntFifthRecepient.BankAccountAmount}");
+            Console.WriteLine("Класс4, transfer 50:");
+            bankAccauntFifthRecepient.TransferMoneyToAccount(bankAccauntFifthDonor, 50);
+
+            Console.WriteLine($"Account donor after transfer: '{bankAccauntFifthDonor.BankAccountNumber}' " +               
+                $"amount: {bankAccauntFifthDonor.BankAccountAmount}");
+
+            Console.WriteLine($"Account recepient after transfer: '{bankAccauntFifthRecepient.BankAccountNumber}' " +
+                $"amount: {bankAccauntFifthRecepient.BankAccountAmount}");
+
+            /*
+             * Реализовать метод, который в качестве входного параметра принимает строку string, 
+             * возвращает строку типа string, буквы в которой идут в обратном порядке. 
+             * Протестировать метод.
+             */
+
+            string source = "abcdefgh1234567890";
+            Console.WriteLine("turn order backward for letters in " + source);
+            string result1 = GetStringInBackwardDirection1(source);
+            Console.WriteLine(result1);
+
+            string result2 = GetStringInBackwardDirection2(source);
+            Console.WriteLine(result2);
+
             Console.ReadLine();
+        }
+
+        private static string GetStringInBackwardDirection1(string source)
+        {
+            string result = "";
+
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                result = result + source[i];
+            }
+
+            return result;
+        }
+
+        private static string GetStringInBackwardDirection2(string source)
+        {
+            char[] result = source.ToCharArray();
+
+            //это слишком скучно
+            //Array.Reverse(result);
+
+            for (int i = 0; i < source.Length / 2; i++)
+            {
+                char frontLetter = source[i];
+                result[i] = source[source.Length - (i + 1)];
+                result[source.Length - (i + 1)] = frontLetter;
+            }
+
+            return new string(result);
         }
     }
 }
