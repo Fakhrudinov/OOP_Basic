@@ -105,5 +105,52 @@ namespace OOP_DZ2
             // some logic to understand is transfer complete
             return true;
         }
+
+
+        public override string ToString()
+        {
+            //this._numerator == 0)
+            //private string _bankAccountNumber;
+            //private double _bankAccountAmount;
+            //private BankAccount.bankAccountType _bankAccountType;
+
+            return $"Account #{this.BankAccountNumber} type {this.BankAccountType}, current amount {this.BankAccountAmount} gold";
+        }
+
+        public static bool operator ==(BankAccauntFourth account1, BankAccauntFourth account2)
+        {
+            if (account1.BankAccountAmount == account2.BankAccountAmount && account1.BankAccountType == account2.BankAccountType)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool operator !=(BankAccauntFourth account1, BankAccauntFourth account2)
+        {
+            if (account1.BankAccountAmount != account2.BankAccountAmount || account1.BankAccountType != account2.BankAccountType)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as BankAccauntFourth);
+        }
+        public bool Equals(BankAccauntFourth account)
+        {
+            return this == account;
+        }
+        public override int GetHashCode()
+        {
+            return this._bankAccountNumber.GetHashCode();
+        }
     }
 }
