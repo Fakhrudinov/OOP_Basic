@@ -60,5 +60,50 @@ namespace OOP_DZ2
 
             _bankAccountNumber = String.Format("{0:0000 0000 0000 0000}", BankAccount.AccountNumber);
         }
+
+        internal void TransferMoneyToAccount(BankAccauntFourth accauntFrom, double moneyToTransfer)
+        {
+            bool successTransferFrom = false;
+            bool successTransferTo = false;
+
+            //check money avaliableness
+            if (accauntFrom.BankAccountAmount >= moneyToTransfer)
+            {
+                successTransferFrom = ChangeMoneyAmount(accauntFrom, moneyToTransfer * -1);
+                successTransferTo = ChangeMoneyAmount(this, moneyToTransfer);
+
+                if (successTransferFrom && successTransferTo)
+                {
+                    Console.WriteLine("OK. Transfer operation complete");
+                }
+                else if (!successTransferFrom && !successTransferTo)
+                {
+                    Console.WriteLine($"Alert! Transfer failed completely!");
+                }
+                else if (!successTransferFrom)
+                {
+                    //error at donor
+                    //try to return money at recipient
+                    successTransferFrom = ChangeMoneyAmount(this, moneyToTransfer * -1);
+                }
+                else if (!successTransferTo)
+                {
+                    //error at recipient
+                    //try to return money to donor
+                    successTransferTo = ChangeMoneyAmount(accauntFrom, moneyToTransfer);
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Alert! Not enough money on accaunt number {accauntFrom.BankAccountNumber} to transfer amount {moneyToTransfer}");
+            }
+        }
+
+        private bool ChangeMoneyAmount(BankAccauntFourth accaunt, double moneyToTransfer)
+        {
+            accaunt.BankAccountAmount = accaunt.BankAccountAmount + moneyToTransfer;
+            // some logic to understand is transfer complete
+            return true;
+        }
     }
 }
