@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderDecoder", "CoderDecoder\CoderDecoder.csproj", "{5D92DD84-2435-43FB-9824-5D4722D4787F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncodeDecodeLib", "EncodeDecodeLib\EncodeDecodeLib.csproj", "{99AAEC65-A427-4B8E-BDC0-7AFFFA3F4670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D92DD84-2435-43FB-9824-5D4722D4787F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D92DD84-2435-43FB-9824-5D4722D4787F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D92DD84-2435-43FB-9824-5D4722D4787F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D92DD84-2435-43FB-9824-5D4722D4787F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AAEC65-A427-4B8E-BDC0-7AFFFA3F4670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AAEC65-A427-4B8E-BDC0-7AFFFA3F4670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AAEC65-A427-4B8E-BDC0-7AFFFA3F4670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AAEC65-A427-4B8E-BDC0-7AFFFA3F4670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38577494-303C-4674-8D33-A51FEF2EFEDE}
+	EndGlobalSection
+EndGlobal
